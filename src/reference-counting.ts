@@ -27,4 +27,8 @@
 
 import * as Rx from 'rxjs/Rx';
 
+// 创建`observable` 每500ms发送一个递进数字 1, 2, 3,  ...
 const source = Rx.Observable.interval(500);
+const subject = new Rx.Subject() as Rx.Subject<number>;
+// 创建'多路广播'
+const multicasted = source.multicast(subject);
