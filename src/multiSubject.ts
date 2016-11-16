@@ -9,7 +9,7 @@ const sj = new Rx.Subject();
 const subscription1 = sj.subscribe((data) => console.log('first:', data));
 
 sj.next(1);
-// subscription1.unsubscribe();
+subscription1.unsubscribe();
 
 sj.subscribe((data) => console.log('second:', data));
 
